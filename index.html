@@ -7,6 +7,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+<style>
+    .profile-image img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        display: block;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .profile-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-image img {
+            max-width: 250px;
+        }
+    }
+</style>
+
 </head>
 
 <body class="is-preload">
@@ -62,8 +86,8 @@
                         <p>I am a firm believer of passion and determination.</p>
 
                     </div>
-                    <span class="image object">
-                        <img src="3.jpg" alt="" />
+                    <span class="image object profile-image">
+    <img src="3.jpg" alt="Saurabh Profile Photo" />
                     </span>
                 </section>
 
