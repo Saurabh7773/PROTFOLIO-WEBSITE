@@ -2,31 +2,39 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
 
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Saurabh K. Singh Champawat - B.Tech AI & Data Science Student Portfolio">
+        content="Saurabh K. Singh Champawat - AI & Data Science Student Portfolio">
 
-    <meta name="author" content="Saurabh K. Singh Champawat">
+    <meta name="author"
+        content="Saurabh K. Singh Champawat">
 
     <title>Saurabh's Portfolio Website</title>
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+        href="assets/css/main.css">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+
+    <!-- Additional Responsive CSS -->
     <style>
 
-        /* ================================
-           GLOBAL STYLES
-        ================================= */
+        /* =========================================
+           GENERAL
+        ========================================= */
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
@@ -35,223 +43,138 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #333333;
-            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: 90%;
+        .section-container {
+            width: 100%;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
         }
 
 
-        /* ================================
-           HEADER
-        ================================= */
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
         #header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            padding: 20px 5%;
-
-            border-bottom: 1px solid #dddddd;
-
-            background: #ffffff;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            gap: 20px;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: 400;
-            color: #222222;
-        }
-
-        .logo strong {
-            font-weight: 700;
-        }
-
-        .social-icons {
+        #header .icons {
             display: flex;
-            gap: 18px;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        #header .icons li {
             list-style: none;
         }
 
-        .social-icons a {
+        #header .icons a {
             font-size: 18px;
-            color: #555555;
-
-            transition: 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #0077b5;
-            transform: translateY(-2px);
         }
 
 
-        /* ================================
-           HERO / BANNER
-        ================================= */
+        /* =========================================
+           MOBILE MENU / NAV
+        ========================================= */
+
+        .mobile-navigation {
+            display: none;
+        }
+
+
+        /* =========================================
+           BANNER
+        ========================================= */
 
         #banner {
-            min-height: 90vh;
-
             display: flex;
             align-items: center;
-
-            padding: 80px 0;
+            gap: 60px;
         }
 
-        .banner-content {
+        #banner .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        #banner .image {
+            flex: 0 0 360px;
+            width: 360px;
+        }
+
+        #banner .image img {
             width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
-        .banner-content header {
-            margin-bottom: 30px;
-        }
-
-        .banner-content h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
+        #banner h1 {
+            font-size: 2.7rem;
             line-height: 1.15;
-            color: #222222;
+        }
+
+        #banner .tagline {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================================
+           ABOUT ME
+        ========================================= */
+
+        .about-content p {
             margin-bottom: 20px;
         }
 
-        .banner-content h1 span {
-            color: #0077b5;
+
+        /* =========================================
+           SECTION HEADINGS
+        ========================================= */
+
+        .portfolio-section {
+            padding: 70px 0;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #666666;
-        }
-
-        .about-title {
-            font-size: 1.5rem;
+        .portfolio-section h2 {
             margin-bottom: 15px;
-            color: #222222;
         }
 
-        .about-text {
-            max-width: 900px;
-            color: #555555;
-            margin-bottom: 18px;
-            font-size: 1rem;
+        .section-intro {
+            margin-bottom: 35px;
+            max-width: 800px;
         }
 
 
-        /* ================================
-           BUTTONS
-        ================================= */
-
-        .buttons {
-            margin-top: 30px;
-
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 12px 22px;
-
-            border-radius: 6px;
-
-            background: #0077b5;
-            color: #ffffff;
-
-            font-weight: 600;
-
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #005f91;
-            transform: translateY(-2px);
-        }
-
-        .btn.secondary {
-            background: #333333;
-        }
-
-        .btn.secondary:hover {
-            background: #111111;
-        }
-
-
-        /* ================================
-           SECTION
-        ================================= */
-
-        .section {
-            padding: 80px 0;
-            border-top: 1px solid #eeeeee;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.3rem;
-            color: #222222;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #777777;
-        }
-
-
-        /* ================================
+        /* =========================================
            CERTIFICATES
-        ================================= */
+        ========================================= */
 
         .certificate-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .certificate-card {
             background: #ffffff;
-
             border: 1px solid #dddddd;
-
-            border-radius: 10px;
-
+            border-radius: 8px;
             overflow: hidden;
 
             box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.06);
+                0 4px 15px rgba(0, 0, 0, 0.08);
 
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
 
             display: flex;
             flex-direction: column;
@@ -261,16 +184,18 @@
             transform: translateY(-6px);
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.12);
+                0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
         .certificate-image {
             width: 100%;
-            height: 220px;
+            height: 210px;
 
             object-fit: cover;
 
             background: #f5f5f5;
+
+            border-bottom: 1px solid #eeeeee;
         }
 
         .certificate-content {
@@ -279,65 +204,56 @@
             display: flex;
             flex-direction: column;
 
-            flex-grow: 1;
+            flex: 1;
         }
 
         .certificate-content h3 {
-            font-size: 1.2rem;
-            color: #222222;
-
+            font-size: 1.15rem;
             margin-bottom: 10px;
         }
 
         .certificate-content p {
-            color: #666666;
-
-            font-size: 0.95rem;
-
-            margin-bottom: 18px;
+            font-size: 0.92rem;
+            margin-bottom: 20px;
         }
 
-        .certificate-btn {
+        .certificate-button {
             margin-top: auto;
+        }
 
+        .certificate-button a {
             display: inline-block;
+            padding: 8px 15px;
 
-            padding: 9px 15px;
+            border: 1px solid #f56a6a;
 
-            border-radius: 5px;
-
-            background: #0077b5;
-            color: white;
-
-            text-align: center;
+            color: #f56a6a;
 
             font-weight: 600;
 
-            transition: 0.3s ease;
+            border-radius: 4px;
+
+            transition: all 0.3s ease;
         }
 
-        .certificate-btn:hover {
-            background: #005f91;
+        .certificate-button a:hover {
+            background: #f56a6a;
+            color: #ffffff;
         }
 
 
-        /* ================================
-           SKILLS
-        ================================= */
+        /* =========================================
+           PROJECTS
+        ========================================= */
 
-        .skills-container {
+        .project-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
-        .skill-card {
+        .project-card {
             padding: 25px;
-
-            text-align: center;
 
             border: 1px solid #dddddd;
 
@@ -345,205 +261,202 @@
 
             background: #ffffff;
 
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .skill-card:hover {
+        .project-card:hover {
             transform: translateY(-5px);
 
             box-shadow:
                 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .skill-card i {
-            font-size: 35px;
-            color: #0077b5;
+        .project-card i {
+            font-size: 30px;
             margin-bottom: 15px;
+            color: #f56a6a;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.92rem;
+        }
+
+
+        /* =========================================
+           SKILLS
+        ========================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border: 1px solid #dddddd;
+
+            border-radius: 8px;
+
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .skill-card i {
+            font-size: 30px;
+            margin-bottom: 12px;
+            color: #f56a6a;
         }
 
         .skill-card h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
 
-        /* ================================
-           FOOTER
-        ================================= */
+        /* =========================================
+           CONTACT
+        ========================================= */
 
-        footer {
-            background: #222222;
-
-            color: #ffffff;
-
-            text-align: center;
-
-            padding: 35px 20px;
+        .contact-list {
+            list-style: none;
+            padding: 0;
         }
 
-        footer p {
-            color: #cccccc;
+        .contact-list li {
             margin-bottom: 15px;
         }
 
-        .footer-social {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 20px;
-
-            list-style: none;
-        }
-
-        .footer-social a {
-            font-size: 20px;
-            color: #ffffff;
-
-            transition: 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: #00a8ff;
+        .contact-list i {
+            width: 25px;
+            color: #f56a6a;
         }
 
 
-        /* ================================
-           TABLET RESPONSIVE
-        ================================= */
+        /* =========================================
+           FOOTER
+        ========================================= */
 
-        @media screen and (max-width: 992px) {
+        #footer {
+            text-align: center;
+        }
 
-            #header {
-                padding: 18px 4%;
-            }
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media screen and (max-width: 980px) {
 
             #banner {
-                min-height: auto;
+                gap: 35px;
+            }
 
-                padding: 70px 0;
+            #banner .image {
+                flex: 0 0 300px;
+                width: 300px;
+            }
+
+            #banner h1 {
+                font-size: 2.2rem;
             }
 
             .certificate-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .skills-container {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
 
-        /* ================================
-           MOBILE RESPONSIVE
-        ================================= */
+        /* =========================================
+           MOBILE
+        ========================================= */
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 736px) {
 
             #header {
                 flex-direction: column;
-
-                gap: 15px;
-
-                position: relative;
-
-                text-align: center;
+                align-items: flex-start;
             }
 
-            .social-icons {
-                gap: 20px;
+            #header .icons {
+                width: 100%;
+                justify-content: flex-start;
             }
 
             #banner {
-                padding: 60px 0;
+                flex-direction: column-reverse;
+                align-items: stretch;
+                gap: 30px;
             }
 
-            .banner-content h1 {
-                font-size: 2.3rem;
+            #banner .image {
+                width: 100%;
+                max-width: 330px;
+                margin: 0 auto;
             }
 
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title h2 {
+            #banner h1 {
                 font-size: 2rem;
             }
 
+            #banner .tagline {
+                font-size: 0.9rem;
+            }
+
             .certificate-grid {
                 grid-template-columns: 1fr;
             }
 
-            .skills-container {
+            .project-grid {
                 grid-template-columns: 1fr;
             }
 
-            .buttons {
-                flex-direction: column;
-
-                align-items: stretch;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
-            .btn {
-                justify-content: center;
+            .portfolio-section {
+                padding: 50px 0;
             }
+
         }
 
 
-        /* ================================
+        /* =========================================
            SMALL MOBILE
-        ================================= */
+        ========================================= */
 
         @media screen and (max-width: 480px) {
 
-            .container {
-                width: 92%;
+            #banner h1 {
+                font-size: 1.7rem;
             }
 
-            #header {
-                padding: 15px;
-            }
-
-            .logo {
-                font-size: 19px;
-            }
-
-            .social-icons {
-                gap: 15px;
-            }
-
-            #banner {
-                padding: 45px 0;
-            }
-
-            .banner-content h1 {
-                font-size: 2rem;
-            }
-
-            .about-title {
-                font-size: 1.3rem;
-            }
-
-            .about-text {
-                font-size: 0.95rem;
+            #banner .image {
+                max-width: 280px;
             }
 
             .certificate-image {
                 height: 190px;
             }
 
-            .certificate-content {
-                padding: 18px;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
         }
 
     </style>
@@ -551,205 +464,436 @@
 </head>
 
 
-<body>
+<body class="is-preload">
 
-    <!-- =========================================
-         HEADER
-    ========================================== -->
 
-    <header id="header">
+<!-- =========================================
+     WRAPPER
+========================================== -->
 
-        <a href="index.html" class="logo">
-            <strong>Saurabh's</strong> Portfolio
-        </a>
+<div id="wrapper">
 
-        <ul class="social-icons">
 
-            <li>
-                <a href="https://x.com/SAURABHRAJ84781"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter">
-                    <i class="fa-brands fa-x-twitter"></i>
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <div id="main">
+
+        <div class="inner">
+
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
+            <header id="header">
+
+                <a href="index.html"
+                   class="logo">
+
+                    <strong>Saurabh's</strong>
+                    Portfolio
+
                 </a>
-            </li>
-
-            <li>
-                <a href="https://www.facebook.com/saurabh.singh.rathore.420717"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="https://www.linkedin.com/in/saurabh-singh-rathore-ss8320133/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="https://www.instagram.com/saurabhsinghrathore_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </li>
-
-        </ul>
-
-    </header>
 
 
-    <!-- =========================================
-         MAIN CONTENT
-    ========================================== -->
+                <ul class="icons">
 
-    <main>
+                    <!-- X / Twitter -->
+                    <li>
+                        <a href="https://x.com/SAURABHRAJ84781"
+                           class="icon brands fa-x-twitter"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            <span class="label">
+                                X
+                            </span>
+
+                        </a>
+                    </li>
 
 
-        <!-- =====================================
-             HERO / ABOUT SECTION
-        ====================================== -->
+                    <!-- Facebook -->
+                    <li>
+                        <a href="https://www.facebook.com/saurabh.singh.rathore.420717"
+                           class="icon brands fa-facebook-f"
+                           target="_blank"
+                           rel="noopener noreferrer">
 
-        <section id="banner">
+                            <span class="label">
+                                Facebook
+                            </span>
 
-            <div class="container">
+                        </a>
+                    </li>
 
-                <div class="banner-content">
+
+                    <!-- LinkedIn -->
+                    <li>
+                        <a href="https://www.linkedin.com/in/saurabh-singh-rathore-ss8320133/"
+                           class="icon brands fa-linkedin"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            <span class="label">
+                                LinkedIn
+                            </span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- Instagram -->
+                    <li>
+                        <a href="https://www.instagram.com/saurabhsinghrathore_/"
+                           class="icon brands fa-instagram"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            <span class="label">
+                                Instagram
+                            </span>
+
+                        </a>
+                    </li>
+
+
+                    <!-- GitHub -->
+                    <li>
+                        <a href="https://github.com/"
+                           class="icon brands fa-github"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            <span class="label">
+                                GitHub
+                            </span>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </header>
+
+
+            <!-- =================================
+                 NAVIGATION
+            ================================== -->
+
+            <nav id="menu">
+
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+
+                <ul>
+
+                    <li>
+                        <a href="#banner">
+                            About Me
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#certificates">
+                            Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact Me
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- =================================
+                 BANNER / ABOUT ME
+            ================================== -->
+
+            <section id="banner">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="content">
 
                     <header>
 
+                        <p>
+                            ABOUT ME
+                        </p>
+
+
                         <h1>
+
                             Hi, I'm
                             <br>
 
-                            <span>
-                                SAURABH K. SINGH
-                            </span>
+                            SAURABH K. SINGH
 
                             <br>
 
                             CHAMPAWAT
+
                         </h1>
 
+
                         <p class="tagline">
-                            3rd Year Engineering Student
+
+                            A 3rd Year Engineering Student
                             &
                             Aspiring Data Scientist
+
                         </p>
 
                     </header>
 
 
-                    <!-- ABOUT ME -->
+                    <div class="about-content">
 
-                    <h2 class="about-title">
-                        ABOUT ME
-                    </h2>
+                        <p>
 
-                    <p class="about-text">
-                        I am currently a 3rd-year B.Tech student
-                        pursuing Computer Science & Engineering
-                        with a specialization in Artificial
-                        Intelligence and Data Science at
-                        Poornima University, Jaipur, Rajasthan.
-                        I am expected to graduate in 2028.
-                    </p>
+                            I am currently a 3rd-year B.Tech
+                            student pursuing Computer Science
+                            & Engineering with a specialization
+                            in Artificial Intelligence and Data
+                            Science from Poornima University,
+                            Jaipur, Rajasthan, India. I am
+                            expected to graduate in 2028.
 
-                    <p class="about-text">
-                        I was born and brought up in Jodhpur,
-                        Rajasthan, and completed my schooling
-                        from Army Public School, Jodhpur, in 2024
-                        with Science and Computer Science as my
-                        academic background.
-                    </p>
+                        </p>
 
-                    <p class="about-text">
-                        My interest in Computer Science began
-                        during Class 12 while learning Python.
-                        Programming made me curious about how
-                        software can solve real-world problems
-                        and automate complex tasks.
-                    </p>
 
-                    <p class="about-text">
-                        Currently, I am particularly interested
-                        in Machine Learning, Data Science,
-                        Artificial Intelligence, and software
-                        development. I am continuously improving
-                        my programming, problem-solving, and
-                        analytical skills by working on projects
-                        and practicing Data Structures and
-                        Algorithms.
-                    </p>
+                        <p>
 
-                    <p class="about-text">
-                        Apart from technology, I enjoy reading
-                        technology blogs and articles, exploring
-                        AI research, watching informative
-                        YouTube content, travelling, and
-                        binge-watching series.
-                    </p>
+                            I was born and brought up in Jodhpur,
+                            Rajasthan. I completed my schooling
+                            from Army Public School Jodhpur in
+                            2024 with Science and Computer Science
+                            as my academic background.
+
+                        </p>
+
+
+                        <p>
+
+                            My interest in Computer Science began
+                            during Class 12 while learning Python
+                            programming. Programming made me
+                            interested in solving real-world
+                            problems using technology.
+
+                        </p>
+
+
+                        <p>
+
+                            I am particularly interested in
+                            Machine Learning, Data Science,
+                            Artificial Intelligence and software
+                            development. I am continuously
+                            improving my programming, analytical
+                            and problem-solving skills.
+
+                        </p>
+
+
+                        <p>
+
+                            Apart from technology, I enjoy reading
+                            technology blogs and articles,
+                            exploring AI research, watching
+                            informative YouTube content,
+                            travelling and binge-watching series.
+
+                        </p>
+
+                    </div>
 
 
                     <!-- BUTTONS -->
 
-                    <div class="buttons">
+                    <ul class="actions">
 
-                        <a href="#certificates" class="btn">
-                            <i class="fa-solid fa-certificate"></i>
-                            View Certificates
-                        </a>
+                        <li>
 
-                        <a href="#skills" class="btn secondary">
-                            <i class="fa-solid fa-code"></i>
-                            My Skills
-                        </a>
+                            <a href="#certificates"
+                               class="button big">
 
-                    </div>
+                                View Certificates
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#projects"
+                               class="button">
+
+                                View Projects
+
+                            </a>
+
+                        </li>
+
+                    </ul>
 
                 </div>
 
-            </div>
 
-        </section>
+                <!-- PROFILE IMAGE -->
+
+                <span class="image object">
+
+                    <img src="images/profile.jpg"
+                         alt="Saurabh K. Singh Champawat">
+
+                </span>
+
+            </section>
 
 
-        <!-- =====================================
-             CERTIFICATES SECTION
-        ====================================== -->
+            <!-- =================================
+                 PROJECTS
+            ================================== -->
 
-        <section id="certificates" class="section">
+            <section id="projects"
+                     class="portfolio-section">
 
-            <div class="container">
-
-                <div class="section-title">
+                <header class="major">
 
                     <h2>
-                        Certificates
+                        Projects
                     </h2>
 
-                    <p>
-                        Professional certifications and
-                        achievements
-                    </p>
+                </header>
+
+
+                <p class="section-intro">
+
+                    Some of my academic and personal projects
+                    focused on programming, Data Science,
+                    Artificial Intelligence and software
+                    development.
+
+                </p>
+
+
+                <div class="project-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <h3>
+                            Student Management System
+                        </h3>
+
+                        <p>
+
+                            A Python-based Student Management
+                            System developed using Object-Oriented
+                            Programming concepts.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project-card">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <h3>
+                            House Price Prediction
+                        </h3>
+
+                        <p>
+
+                            A Machine Learning project that
+                            predicts house prices using relevant
+                            features and regression techniques.
+
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project-card">
+
+                        <i class="fa-solid fa-money-bill"></i>
+
+                        <h3>
+                            Employee Payroll System
+                        </h3>
+
+                        <p>
+
+                            A Python-based payroll management
+                            project designed to calculate and
+                            manage employee salary information.
+
+                        </p>
+
+                    </article>
+
 
                 </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CERTIFICATES
+            ================================== -->
+
+            <section id="certificates"
+                     class="portfolio-section">
+
+                <header class="major">
+
+                    <h2>
+                        Certifications
+                    </h2>
+
+                </header>
+
+
+                <p class="section-intro">
+
+                    Here are some of my professional
+                    certifications, courses and achievements.
+
+                </p>
 
 
                 <div class="certificate-grid">
@@ -759,37 +903,36 @@
 
                     <article class="certificate-card">
 
-                        <!--
-                            Replace this image path with
-                            your actual certificate image.
-                        -->
-
                         <img src="images/certificates/certificate1.jpg"
-                            alt="Certificate 1"
-                            class="certificate-image">
+                             alt="Data Science Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
                             <h3>
-                                Data Science Certificate
+                                Data Science
                             </h3>
 
                             <p>
-                                Certificate demonstrating
-                                knowledge and practical skills
-                                in Data Science.
+
+                                Certification related to Data
+                                Science concepts, data analysis
+                                and practical skills.
+
                             </p>
 
-                            <!--
-                                Replace "#" with the actual
-                                certificate verification URL.
-                            -->
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -801,8 +944,9 @@
                     <article class="certificate-card">
 
                         <img src="images/certificates/certificate2.jpg"
-                            alt="Certificate 2"
-                            class="certificate-image">
+                             alt="Python Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
@@ -811,16 +955,24 @@
                             </h3>
 
                             <p>
-                                Certification covering Python
-                                programming and fundamental
-                                programming concepts.
+
+                                Certification demonstrating
+                                Python programming and
+                                programming fundamentals.
+
                             </p>
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -832,8 +984,9 @@
                     <article class="certificate-card">
 
                         <img src="images/certificates/certificate3.jpg"
-                            alt="Certificate 3"
-                            class="certificate-image">
+                             alt="Machine Learning Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
@@ -842,16 +995,24 @@
                             </h3>
 
                             <p>
-                                Certificate showcasing
+
+                                Certification demonstrating
                                 foundational knowledge of
-                                Machine Learning concepts.
+                                Machine Learning.
+
                             </p>
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -863,8 +1024,9 @@
                     <article class="certificate-card">
 
                         <img src="images/certificates/certificate4.jpg"
-                            alt="Certificate 4"
-                            class="certificate-image">
+                             alt="Web Development Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
@@ -873,16 +1035,24 @@
                             </h3>
 
                             <p>
+
                                 Certification related to
                                 frontend and web development
                                 technologies.
+
                             </p>
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -894,8 +1064,9 @@
                     <article class="certificate-card">
 
                         <img src="images/certificates/certificate5.jpg"
-                            alt="Certificate 5"
-                            class="certificate-image">
+                             alt="Artificial Intelligence Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
@@ -904,16 +1075,24 @@
                             </h3>
 
                             <p>
-                                Certification demonstrating
-                                understanding of Artificial
-                                Intelligence concepts.
+
+                                Certification related to
+                                Artificial Intelligence and
+                                intelligent systems.
+
                             </p>
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -925,8 +1104,9 @@
                     <article class="certificate-card">
 
                         <img src="images/certificates/certificate6.jpg"
-                            alt="Certificate 6"
-                            class="certificate-image">
+                             alt="Data Analytics Certificate"
+                             class="certificate-image">
+
 
                         <div class="certificate-content">
 
@@ -935,16 +1115,24 @@
                             </h3>
 
                             <p>
-                                Certificate demonstrating
-                                skills in data analysis and
-                                data visualization.
+
+                                Certification related to data
+                                analysis, visualization and
+                                analytical techniques.
+
                             </p>
 
-                            <a href="#"
-                                target="_blank"
-                                class="certificate-btn">
-                                View Certificate
-                            </a>
+
+                            <div class="certificate-button">
+
+                                <a href="#"
+                                   target="_blank">
+
+                                    View Certificate
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -953,34 +1141,26 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- =====================================
-             SKILLS SECTION
-        ====================================== -->
+            <!-- =================================
+                 SKILLS
+            ================================== -->
 
-        <section id="skills" class="section">
+            <section id="skills"
+                     class="portfolio-section">
 
-            <div class="container">
-
-                <div class="section-title">
+                <header class="major">
 
                     <h2>
                         Technical Skills
                     </h2>
 
-                    <p>
-                        Technologies and tools I am learning
-                        and working with
-                    </p>
-
-                </div>
+                </header>
 
 
-                <div class="skills-container">
+                <div class="skills-grid">
 
 
                     <div class="skill-card">
@@ -996,10 +1176,10 @@
 
                     <div class="skill-card">
 
-                        <i class="fa-solid fa-database"></i>
+                        <i class="fa-solid fa-code"></i>
 
                         <h3>
-                            Data Science
+                            C++ & DSA
                         </h3>
 
                     </div>
@@ -1021,7 +1201,7 @@
                         <i class="fa-solid fa-chart-line"></i>
 
                         <h3>
-                            Data Analysis
+                            Data Science
                         </h3>
 
                     </div>
@@ -1029,10 +1209,10 @@
 
                     <div class="skill-card">
 
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-database"></i>
 
                         <h3>
-                            C++ & DSA
+                            SQL
                         </h3>
 
                     </div>
@@ -1073,62 +1253,157 @@
 
                 </div>
 
-            </div>
-
-        </section>
-
-    </main>
+            </section>
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
+            <!-- =================================
+                 CONTACT
+            ================================== -->
 
-    <footer>
+            <section id="contact"
+                     class="portfolio-section">
 
-        <p>
-            &copy; 2026 Saurabh K. Singh Champawat.
-            All Rights Reserved.
-        </p>
+                <header class="major">
 
-        <ul class="footer-social">
+                    <h2>
+                        Contact Me
+                    </h2>
 
-            <li>
-                <a href="https://www.linkedin.com/in/saurabh-singh-rathore-ss8320133/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn">
+                </header>
 
-                    <i class="fa-brands fa-linkedin-in"></i>
 
-                </a>
-            </li>
+                <p>
 
-            <li>
-                <a href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub">
+                    I am currently looking for opportunities
+                    to learn, contribute and grow in the fields
+                    of Artificial Intelligence, Data Science
+                    and Machine Learning.
 
-                    <i class="fa-brands fa-github"></i>
+                </p>
 
-                </a>
-            </li>
 
-            <li>
-                <a href="https://www.instagram.com/saurabhsinghrathore_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram">
+                <ul class="contact-list">
 
-                    <i class="fa-brands fa-instagram"></i>
+                    <li>
 
-                </a>
-            </li>
+                        <i class="fa-solid fa-envelope"></i>
 
-        </ul>
+                        <strong>Email:</strong>
 
-    </footer>
+                        your-email@example.com
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        <strong>LinkedIn:</strong>
+
+                        <a href="https://www.linkedin.com/in/saurabh-singh-rathore-ss8320133/"
+                           target="_blank">
+
+                            LinkedIn Profile
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-brands fa-github"></i>
+
+                        <strong>GitHub:</strong>
+
+                        <a href="https://github.com/"
+                           target="_blank">
+
+                            GitHub Profile
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </section>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer id="footer">
+
+                <p class="copyright">
+
+                    &copy; 2026 Saurabh K. Singh Champawat.
+                    All Rights Reserved.
+
+                </p>
+
+            </footer>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+    /*
+     * Remove loading class after page loads.
+     */
+
+    window.addEventListener("load", function () {
+
+        document.body.classList.remove("is-preload");
+
+    });
+
+
+    /*
+     * Smooth navigation for internal links.
+     */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        });
+
+    });
+
+</script>
 
 
 </body>
